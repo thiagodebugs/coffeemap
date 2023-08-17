@@ -52,7 +52,7 @@ export default function Home() {
         <Container>
           <Grid container spacing={2}>
             {devices.map((device, index) => (
-              <Grid item xs={4} key={index}>
+              <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card
                   title={device.name}
                   description={device.coordinate}
