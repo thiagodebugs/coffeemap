@@ -1,6 +1,14 @@
 "use client";
 
-import { Box, Button, Container, TextField, Link } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  TextField,
+  Link,
+  Fade,
+  LinearProgress,
+} from "@mui/material";
 import NextLink from "next/link";
 import { Footer, Logo } from "@/components";
 import { useState } from "react";
@@ -9,6 +17,7 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [values, setValues] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
   const supabase = createClientComponentClient();
   const router = useRouter();
 
@@ -24,17 +33,24 @@ export default function Home() {
       if (error) throw error;
 
       router.push("/home");
+      setLoading(true);
     } catch (error) {
       alert(error.message);
       setValues({ email: "", password: "" });
+      setLoading(false);
     }
   };
   return (
     <>
+      <Box sx={{ width: "100%", height: "2px" }}>
+        <Fade in={loading}>
+          <LinearProgress />
+        </Fade>
+      </Box>
       <Box
         sx={{
           width: "100%",
-          height: "100vh",
+          height: "95vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-around",
