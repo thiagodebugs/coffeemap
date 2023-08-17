@@ -1,10 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import CoffeeMakerIcon from "@mui/icons-material/CoffeeMaker";
 
-export default function Logo() {
+export default function Logo({ variant }) {
   return (
     <>
-      <Typography variant="h3" sx={{ display: "flex" }}>
+      <Typography
+        variant={variant || "h3"}
+        sx={{ display: "flex", alignItems: "center" }}
+      >
         <CoffeeMakerIcon fontSize="inherit" />
         CoffeMap
       </Typography>

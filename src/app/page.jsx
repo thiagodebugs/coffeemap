@@ -16,7 +16,7 @@ export default function Home() {
         }}
       >
         <Box>
-          <Logo />
+          <Logo variant="h3" />
         </Box>
         <Container
           component="form"
