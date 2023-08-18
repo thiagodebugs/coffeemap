@@ -52,13 +52,14 @@ export default function Home() {
         <Container>
           <Grid container spacing={2}>
             {devices.map((device, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card
-                  title={device.name}
-                  description={device.coordinate}
-                  image={`https://source.unsplash.com/random/?coffe=${device.id}`}
-                />
-              </Grid>
+              <>
+                <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Card
+                    device={device}
+                    image={`https://source.unsplash.com/random/?coffe=${device.id}`}
+                  />
+                </Grid>
+              </>
             ))}
           </Grid>
         </Container>
