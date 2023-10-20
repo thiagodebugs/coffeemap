@@ -18,9 +18,10 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
-import MailIcon from "@mui/icons-material/Mail";
+import MapIcon from "@mui/icons-material/Map";
 import { useState } from "react";
 import { AccountMenu, Logo } from "@/components";
+import NextLink from "next/link";
 
 const drawerWidth = 240;
 
@@ -69,9 +70,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function Navbar({ children }) {
+export default function Navbar({ children, option }) {
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -125,12 +126,28 @@ export default function Navbar({ children }) {
         </DrawerHeader>
         <Divider />
         <List>
-          <ListItem disablePadding selected>
-            <ListItemButton>
+          <ListItem disablePadding>
+            <ListItemButton
+              component={NextLink}
+              to="/home"
+              selected={"home" === option}
+            >
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
-              <ListItemText primary="Home" />
+              <ListItemText primary="Início" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton
+              component={NextLink}
+              to="/map"
+              selected={"map" === option}
+            >
+              <ListItemIcon>
+                <MapIcon />
+              </ListItemIcon>
+              <ListItemText primary="Mapa" />
             </ListItemButton>
           </ListItem>
         </List>

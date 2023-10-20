@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar>
+      <Navbar option="home">
         <Container>
           <TextField
             fullWidth
