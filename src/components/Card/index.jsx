@@ -31,12 +31,8 @@ export default function MyCard({ device, image }) {
             {device.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <Link
-              target="_blank"
-              href={`https://www.google.com/maps/search/?api=1&query=${device.coordinate}`}
-              component={NextLink}
-            >
-              {device.coordinate}
+            <Link href={`/map?device=${device.id}`} component={NextLink}>
+              {device.latitude}, {device.longitude}
             </Link>
           </Typography>
         </CardContent>
