@@ -1,4 +1,5 @@
 "use client";
+
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Card, Navbar } from "@/components";
 import { Search } from "@mui/icons-material";

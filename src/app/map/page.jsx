@@ -31,10 +31,6 @@ export default function Map() {
     fetchDevices();
   }, []);
 
-  if (typeof window === "undefined") {
-    return <></>;
-  }
-
   return (
     <>
       <Navbar option="map">
