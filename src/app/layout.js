@@ -1,5 +1,3 @@
-"use client";
-
 import { CssBaseline } from "@mui/material";
 
 export const metadata = {
