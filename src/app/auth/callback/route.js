@@ -3,7 +3,8 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export async function GET(req) {
-  const supabase = createRouteHandlerClient({ cookies });
+  const cookieData = cookies();
+  const supabase = createRouteHandlerClient({ cookieData });
   const { searchParams } = new URL(req.url);
   const code = searchParams.get("code");
 
