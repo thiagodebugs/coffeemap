@@ -10,7 +10,7 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
 
 export default function Map() {
-  const position = [-11.85385, -55.51208]; //sinop mato grosso
+  const position = [-11.85385, -55.51208];
   const supabase = createClientComponentClient();
   const [devices, setDevices] = useState([]);
 
@@ -35,7 +35,7 @@ export default function Map() {
     <>
       <Navbar option="map">
         <Box>
-          <MapContainer
+          {/* <MapContainer
             center={position}
             zoom={13}
             style={{
@@ -62,7 +62,7 @@ export default function Map() {
                 </Popup>
               </Marker>
             ))}
-          </MapContainer>
+          </MapContainer> */}
         </Box>
       </Navbar>
     </>
