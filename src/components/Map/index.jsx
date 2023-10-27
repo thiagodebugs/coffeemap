@@ -3,13 +3,13 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import Typography from "@mui/material/Typography";
 import "leaflet/dist/leaflet.css";
-// import "leaflet-defaulticon-compatibility";
+import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
 export default function Map({ position, devices }) {
   return (
     <>
-      {/* <MapContainer
+      <MapContainer
         center={position}
         zoom={13}
         style={{
@@ -33,7 +33,7 @@ export default function Map({ position, devices }) {
             </Popup>
           </Marker>
         ))}
-      </MapContainer> */}
+      </MapContainer>
     </>
   );
 }
