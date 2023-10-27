@@ -1,6 +1,6 @@
 export { default as Logo } from "./Logo";
 export { default as Footer } from "./Footer";
-export { default as Map } from "./Map";
+export { default as MapView } from "./MapView";
 export { default as Navbar } from "./Navbar";
 export { default as AccountMenu } from "./AccountMenu";
 export { default as Card } from "./Card";

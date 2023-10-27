@@ -1,6 +1,6 @@
 "use client";
 
-import { Map, Navbar } from "@/components";
+import { MapView, Navbar } from "@/components";
 import { Box } from "@mui/material";
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
@@ -32,7 +32,7 @@ export default function MapPage() {
     <>
       <Navbar option="map">
         <Box>
-          <Map position={position} devices={devices} />
+          <MapView position={position} devices={devices} />
         </Box>
       </Navbar>
     </>
