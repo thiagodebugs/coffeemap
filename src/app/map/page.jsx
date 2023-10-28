@@ -1,12 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
-const DynamicMap = dynamic(() => import("@/components/MapView"), {
-  ssr: false,
-});
-
-import { Navbar } from "@/components";
+import { MapView, Navbar } from "@/components";
 import { Box } from "@mui/material";
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
@@ -38,7 +32,9 @@ export default function MapPage() {
     <>
       <Navbar option="map">
         <Box>
-          <DynamicMap position={position} devices={devices} />
+          {devices.length > 0 && (
+            <MapView position={position} devices={devices} />
+          )}
         </Box>
       </Navbar>
     </>
