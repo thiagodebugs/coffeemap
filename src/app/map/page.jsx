@@ -31,7 +31,9 @@ export default function MapPage() {
   //if window is undefined, we are on the server
   if (typeof window === "undefined") {
     return null;
-  } else {
+  } else {1 wg
+    itq
+
     return (
       <>
         <Navbar option="map">

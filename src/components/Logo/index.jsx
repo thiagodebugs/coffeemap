@@ -9,7 +9,7 @@ export default function Logo({ variant }) {
         sx={{ display: "flex", alignItems: "center" }}
       >
         <CoffeeMakerIcon fontSize="inherit" />
-        CoffeMap
+        CoffeeMap
       </Typography>
     </>
   );

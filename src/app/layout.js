@@ -1,7 +1,7 @@
 import { CssBaseline } from "@mui/material";
 
 export const metadata = {
-  title: "CoffeMap",
+  title: "CoffeeMap",
   description: "Saiba exatamente onde esta a sua maquina de café!",
 };
 
