@@ -31,19 +31,17 @@ export default function MapPage() {
   //if window is undefined, we are on the server
   if (typeof window === "undefined") {
     return null;
-  } else {1 wg
-    itq
-
-    return (
-      <>
-        <Navbar option="map">
-          <Box>
-            {devices.length > 0 && (
-              <MapView position={position} devices={devices} />
-            )}
-          </Box>
-        </Navbar>
-      </>
-    );
   }
+
+  return (
+    <>
+      <Navbar option="map">
+        <Box>
+          {devices.length > 0 && (
+            <MapView position={position} devices={devices} />
+          )}
+        </Box>
+      </Navbar>
+    </>
+  );
 }
