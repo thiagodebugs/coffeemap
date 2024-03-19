@@ -1,6 +1,5 @@
 "use client";
 
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Card, Navbar } from "@/components";
 import { Search } from "@mui/icons-material";
 import {
@@ -13,23 +12,10 @@ import {
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const supabase = createClientComponentClient();
   const [devices, setDevices] = useState([]);
 
   useEffect(() => {
-    const fetchDevices = async () => {
-      try {
-        const { data, error } = await supabase.from("devices").select("*");
-
-        if (error) throw error;
-
-        setDevices(data);
-      } catch (error) {
-        alert(error.message);
-        console.error(error);
-      }
-    };
-
+    const fetchDevices = async () => {};
     fetchDevices();
   }, []);
 
