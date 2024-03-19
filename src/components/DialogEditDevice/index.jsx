@@ -9,10 +9,8 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function FormDialog({ open: openDialog, handleClose, device }) {
-  const supabase = createClientComponentClient();
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(device);
 
@@ -21,23 +19,6 @@ export default function FormDialog({ open: openDialog, handleClose, device }) {
   }, [openDialog]);
 
   const handleUpdateDateDevice = async () => {
-    try {
-      const { error } = await supabase
-        .from("devices")
-        .update({
-          name: value.name,
-          description: value.description,
-        })
-        .eq("id", value.id);
-
-      if (error) throw error;
-
-      alert("Dispositivo atualizado com sucesso!");
-      handleClose();
-    } catch (error) {
-      alert(error.message);
-      handleClose();
-    }
   };
 
   return (

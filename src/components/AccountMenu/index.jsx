@@ -11,12 +11,10 @@ import Tooltip from "@mui/material/Tooltip";
 import Logout from "@mui/icons-material/Logout";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const supabase = createClientComponentClient();
   const router = useRouter();
 
   const handleClick = (event) => {
@@ -27,13 +25,7 @@ export default function AccountMenu() {
   };
 
   const handleLogout = async () => {
-    try {
-      const { error } = await supabase.auth.signOut();
-      if (error) throw error;
-      router.push("/");
-    } catch (error) {
-      alert(error.message);
-    }
+    
   };
 
   return (
