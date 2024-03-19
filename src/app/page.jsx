@@ -10,36 +10,28 @@ import {
   LinearProgress,
 } from "@mui/material";
 import NextLink from "next/link";
-import { Footer, Logo } from "@/components";
 import { useState } from "react";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
+import { Footer, Logo } from "@/components";
 
 export default function Home() {
   const [values, setValues] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
-  const supabase = createClientComponentClient();
   const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    event.stopPropagation();
+    setLoading(true);
+
+    const { email, password } = values;
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email: values.email,
-        password: values.password,
-      });
-
-      if (error) throw error;
-
-      router.push("/home");
-      setLoading(true);
     } catch (error) {
-      alert(error.message);
-      setValues({ email: "", password: "" });
-      setLoading(false);
+    } finally {
     }
   };
+
   return (
     <>
       <Box sx={{ width: "100%", height: "2px" }}>
